@@ -41,9 +41,9 @@ class InjectableStoreCreator {
     isInjectable: boolean = true
   ): Store<any> {
     // update reducers list with new entity reducer
-    const middleware = applyMiddleware(thunk, ...this.middlewares);
+    const enhancer = compose(applyMiddleware(thunk, ...this.middlewares));
     const initialState = {};
-    const store = createStore(this.combinedReducer, initialState, middleware);
+    const store = createStore(this.combinedReducer, initialState, enhancer);
     if (isInjectable) {
       this._store = store;
       return this._store; // return shared injectable store instance
@@ -76,9 +76,8 @@ const injectable = new InjectableStoreCreator();
 export const storeCreator = (...args: any): Store<any> =>
   injectable.storeCreator.apply(injectable, args);
 
-export const installReducer: (name: string, reducer: Reducer<any>) => void = (
-  ...args
-) => injectable.installReducer.apply(injectable, args);
+export const installReducer: (name: string, reducer: any) => void = (...args) =>
+  injectable.installReducer.apply(injectable, args);
 export const installMiddleware: (...middlewares: Middleware[]) => void = (
   ...args
 ) => injectable.installMiddleware.apply(injectable, args);

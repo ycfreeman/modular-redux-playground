@@ -18,14 +18,15 @@
     "isolatedModules": false,
     "noEmit": true,
     "jsx": "preserve",
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-      "@": [
-        "./src/core"
+      "@/*": [
+        "./*"
       ]
     }
   },
   "include": [
-    "src"
+    "src",
+    "typings/*.d.ts"
   ]
 }
