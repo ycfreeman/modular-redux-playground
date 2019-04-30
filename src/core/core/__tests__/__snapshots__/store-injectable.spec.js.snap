@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test store installReducer 1`] = `
+Object {
+  "test": Object {
+    "test": 0,
+  },
+}
+`;
+
+exports[`test store installReducer 2`] = `
+Object {
+  "test": Object {
+    "test": 1,
+  },
+}
+`;
+
+exports[`test store installReducer 3`] = `
+Object {
+  "test": Object {
+    "test": 0,
+  },
+  "test2": Object {
+    "test": -1,
+  },
+}
+`;
