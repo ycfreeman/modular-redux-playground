@@ -1,4 +1,4 @@
-import { isEmpty as _isEmpty } from "lodash";
+import _isEmpty from "lodash/isEmpty";
 import {
   applyMiddleware,
   compose as _compose,
