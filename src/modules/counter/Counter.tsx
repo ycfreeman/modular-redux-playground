@@ -6,6 +6,7 @@ import {
   asyncIncrement as _asyncIncrementAC,
   getCounter
 } from "./widget";
+import { Button } from "reactstrap";
 
 const Counter = () => {
   const { decrement, asyncIncrement } = useActions({
@@ -20,20 +21,12 @@ const Counter = () => {
     <>
       <p>{counter}</p>
       <div>
-        <button
-          type="button"
-          className="btn btn-outline-primary"
-          onClick={() => asyncIncrement()}
-        >
+        <Button color="primary" outline={true} onClick={() => asyncIncrement()}>
           +
-        </button>
-        <button
-          type="button"
-          className="btn btn-outline-primary"
-          onClick={() => decrement()}
-        >
+        </Button>
+        <Button color="primary" outline={true} onClick={() => decrement()}>
           -
-        </button>
+        </Button>
       </div>
     </>
   );
