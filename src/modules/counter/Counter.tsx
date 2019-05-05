@@ -6,7 +6,13 @@ import {
   asyncIncrement as _asyncIncrementAC,
   getCounter
 } from "./widget";
-import { Button } from "reactstrap";
+
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import IconButton from "@material-ui/core/IconButton";
+import PlusIcon from "@material-ui/icons/Add";
+import MinusIcon from "@material-ui/icons/Remove";
 
 const Counter = () => {
   const { decrement, asyncIncrement } = useActions({
@@ -18,17 +24,17 @@ const Counter = () => {
   const counter = useSelector(getCounter);
 
   return (
-    <>
-      <p>{counter}</p>
-      <div>
-        <Button color="primary" outline={true} onClick={() => asyncIncrement()}>
-          +
-        </Button>
-        <Button color="primary" outline={true} onClick={() => decrement()}>
-          -
-        </Button>
-      </div>
-    </>
+    <Card>
+      <CardContent>{counter}</CardContent>
+      <CardActions>
+        <IconButton onClick={() => asyncIncrement()}>
+          <PlusIcon />
+        </IconButton>
+        <IconButton onClick={() => decrement()}>
+          <MinusIcon />
+        </IconButton>
+      </CardActions>
+    </Card>
   );
 };
 
