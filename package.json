@@ -84,7 +84,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "storybook": "start-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -102,6 +103,7 @@
     ]
   },
   "devDependencies": {
+    "@storybook/react": "^5.0.11",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-standard": "^4.0.0",
